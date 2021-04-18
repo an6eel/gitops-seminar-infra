@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: prometheus
+  namespace: argocd
+spec:
+  destination:
+    namespace: metrics
+    server: https://kubernetes.default.svc
+  project: bonango
+  source:
+    helm:
+      valueFiles:
+      - resources/apps/prometheus/values.yml
+    path: charts/prometheus
+    repoURL: https://github.com/an6eel/gitops-seminar-infra.git
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
