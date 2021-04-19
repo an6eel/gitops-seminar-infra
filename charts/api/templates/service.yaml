@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: {{ .Values.service.name }}
   labels:
-    {{- include "dev.labels" . | nindent 4 }}
+    {{- include "api.labels" . | nindent 4 }}
   {{- if .Values.namespace }}
   namespace: {{ .Values.namespace }}
   {{- end}}
@@ -15,4 +15,4 @@ spec:
   ports:
     - port: {{ .Values.service.port }}
   selector:
-    {{- include "dev.selectorLabels" . | nindent 4 }}
+    {{- include "api.selectorLabels" . | nindent 4 }}

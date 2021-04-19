@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: preprod-api
+  namespace: argocd
+spec:
+  destination:
+    namespace: preprod
+    server: https://kubernetes.default.svc
+  project: gitops
+  source:
+    helm:
+      valueFiles:
+      - resources/apps/api/preprod.yml
+    path: charts/api
+    repoURL: https://github.com/an6eel/gitops-seminar-infra.git
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

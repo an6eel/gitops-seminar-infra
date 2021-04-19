@@ -1,0 +1,28 @@
+kube-prometheus-stack:
+  grafana:
+    ingress:
+      enabled: true
+      ingressClassName: nginx
+      hosts:
+        - dashboard.metrics.local
+      path: /
+
+  alertmanager:
+    ingress:
+      enabled: true
+      ingressClassName: nginx
+      hosts:
+        - metrics.local
+      path: /alerts
+    alertmanagerSpec:
+      routePrefix: /alerts
+
+  prometheus:
+    ingress:
+      enabled: true
+      ingressClassName: nginx
+      hosts:
+        - metrics.local
+      path: /prometheus
+    prometheusSpec:
+      routePrefix: /prometheus
