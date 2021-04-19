@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: prod-api
+  name: api-prod
   namespace: argocd
 spec:
   destination:
@@ -10,12 +10,15 @@ spec:
   project: gitops
   source:
     helm:
+      version: v3
       valueFiles:
-      - resources/apps/api/prod.yml
-    path: charts/api
+      - values.yaml
+    path: resources/apps/api/prod
     repoURL: https://github.com/an6eel/gitops-seminar-infra.git
     targetRevision: HEAD
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

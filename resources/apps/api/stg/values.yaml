@@ -5,7 +5,7 @@ api:
     pullPolicy: IfNotPresent
     # Overrides the image tag whose default is the chart appVersion.
     tag: latest
-  namespace: "staging"
+  namespace: "stg"
   serviceAccount:
     create: false
   podAnnotations: {}
