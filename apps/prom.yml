@@ -1,21 +1,24 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: stg-api
+  name: prometheus
   namespace: argocd
 spec:
   destination:
-    namespace: staging
+    namespace: metrics
     server: https://kubernetes.default.svc
   project: gitops
   source:
     helm:
+      version: v3
       valueFiles:
-      - resources/apps/prometheus/values.yml
-    path: charts/prometheus
+      - values.yaml
+    path: resources/apps/prometheus
     repoURL: https://github.com/an6eel/gitops-seminar-infra.git
     targetRevision: HEAD
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
