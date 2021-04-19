@@ -1,4 +1,4 @@
 dependencies:
 - name: api
-  version: "0.0.1"
-  repository: "file://../../../charts/api"
+  version: "0.1.0"
+  repository: https://an6eel.github.io/gitops-seminar-infra/
