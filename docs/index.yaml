@@ -1,0 +1,11 @@
+apiVersion: v1
+entries:
+  api:
+  - description: Deploy a api example
+    home: https://k8s.io/helm
+    name: api
+    sources:
+    - https://github.com/kubernetes/helm
+    urls:
+    - api-0.1.0.tgz
+    version: 0.3.0
