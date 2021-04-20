@@ -4,12 +4,11 @@ api:
     repository: an6eel/gitops-seminar-code
     pullPolicy: IfNotPresent
     # Overrides the image tag whose default is the chart appVersion.
-    tag: latest
+    tag: 8e1071d22664e413704f53fb6938c47da360a380
   namespace: "preprod"
   serviceAccount:
     create: false
   podAnnotations: {}
-
   service:
     name: preprod-service
     port: 8000
@@ -32,4 +31,3 @@ api:
     maxReplicas: 3
     targetCPUUtilizationPercentage: 80
     #targetMemoryUtilizationPercentage: 80
-
