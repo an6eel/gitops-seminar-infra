@@ -3,7 +3,7 @@ entries:
   api:
   - apiVersion: v3
     appVersion: 1.16.0
-    created: "2021-04-19T22:12:34.324785+02:00"
+    created: "2021-04-21T22:03:30.370696+02:00"
     description: GitOps Seminar API example
     digest: 8a755d8cc9b72b197aabb645f2fae6fe1adb2c93f477cb958bb0b24130d307ee
     name: api
@@ -11,4 +11,4 @@ entries:
     urls:
     - https://an6eel.github.io/gitops-seminar-infra/api-0.1.0.tgz
     version: 0.1.0
-generated: "2021-04-19T22:12:34.32322+02:00"
+generated: "2021-04-21T22:03:30.369036+02:00"
