@@ -4,7 +4,7 @@ api:
     repository: an6eel/gitops-seminar-code
     pullPolicy: IfNotPresent
     # Overrides the image tag whose default is the chart appVersion.
-    tag: 8e1071d22664e413704f53fb6938c47da360a380
+    tag: 68fa98be212a082e96e39744cd73d756e3c5a3fe
   namespace: "preprod"
   serviceAccount:
     create: false
